@@ -1,16 +1,17 @@
-﻿namespace DesafioCarnaval2;
+﻿using System.Globalization;
+namespace DesafioCarnaval2;
 class Program
 {
     static void Main(string[] args)
     {
         try
         {
-            Console.Write("Informe sua altura:");
-            decimal.TryParse(Console.ReadLine(), out decimal altura);
-            Console.Write("Informe seu peso:");
-            decimal.TryParse(Console.ReadLine(), out decimal peso);
+            Console.Write("Informe sua altura:", CultureInfo.InvariantCulture);
+            double.TryParse(Console.ReadLine(), out double altura);
+            Console.Write("Informe seu peso:", CultureInfo.InvariantCulture);
+            double.TryParse(Console.ReadLine(), out double peso);
             var imc = CalcularIMC(peso, altura);
-            Console.WriteLine($"> seu IMC é {imc}");
+            Console.WriteLine($"> seu IMC é {imc}", CultureInfo.InvariantCulture);
             if (imc < 16)
             {
                 Console.WriteLine("> Magresa grau III");
@@ -19,11 +20,11 @@ class Program
             {
                 Console.WriteLine("> Magresa grau II");
             }
-            else if (imc >= 17 && imc < 18.5M)
+            else if (imc >= 17 && imc < 18.5)
             {
                 Console.WriteLine("> Magresa grau I");
             }
-            else if (imc >= 18.5M && imc < 25)
+            else if (imc >= 18.5 && imc < 25)
             {
                 Console.WriteLine("> Estrofia");
             }
@@ -52,11 +53,8 @@ class Program
         {
             Console.WriteLine("erro de conversão " + ex.Message);
         }
-
-
-
     }
 
-    public static decimal CalcularIMC(decimal peso, decimal altura)
+    public static double CalcularIMC(double peso, double altura)
         => peso / (altura * altura);
 }
