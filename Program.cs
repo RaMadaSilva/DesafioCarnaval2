@@ -11,7 +11,7 @@ class Program
             Console.Write("Informe seu peso:", CultureInfo.InvariantCulture);
             double.TryParse(Console.ReadLine(), out double peso);
             var imc = CalcularIMC(peso, altura);
-            Console.WriteLine($"> seu IMC é {imc}", CultureInfo.InvariantCulture);
+            Console.WriteLine($"> seu IMC é {imc.ToString("F2")}", CultureInfo.InvariantCulture);
             if (imc < 16)
             {
                 Console.WriteLine("> Magresa grau III");
@@ -31,7 +31,7 @@ class Program
             else if (imc >= 25 && imc < 30)
             {
                 Console.WriteLine("> Sobrepeso");
-                Console.WriteLine("> Risco: AUmentado");
+                Console.WriteLine("> Risco: Aumentado");
             }
             else if (imc >= 30 && imc < 35)
             {
@@ -51,7 +51,7 @@ class Program
         }
         catch (Exception ex)
         {
-            Console.WriteLine("erro de conversão " + ex.Message);
+            Console.WriteLine("erro de conversão: " + ex.Message);
         }
     }
 
