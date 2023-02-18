@@ -39,22 +39,22 @@ class Program
         else if (imc >= 25 && imc < 30)
             return "Sobrepeso";
         else if (imc >= 30 && imc < 35)
-            return "Obeisdade Grau I";
+            return "Obesidade Grau I";
         else if (imc >= 35 && imc <= 40)
-            return "Obeisdade Grau II";
+            return "Obesidade Grau II";
         else
-            return "Obeisdade Grau III";
+            return "Obesidade Grau III";
     }
 
     static string Risco(string classificacao)
     {
         if (classificacao == "Sobrepeso")
             return "Aumentado";
-        if (classificacao == "Obeisdade Grau I")
+        if (classificacao == "Obesidade Grau I")
             return "Moderado";
-        if (classificacao == "Obeisdade Grau II")
+        if (classificacao == "Obesidade Grau II")
             return "Grave";
-        if (classificacao == "Obeisdade Grau III")
+        if (classificacao == "Obesidade Grau III")
             return "Muito Grave";
         return string.Empty;
     }
