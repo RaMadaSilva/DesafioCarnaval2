@@ -11,7 +11,7 @@ class Program
             Console.Write("Informe seu peso:", CultureInfo.InvariantCulture);
             double.TryParse(Console.ReadLine(), out double peso);
             var imc = CalcularIMC(peso, altura);
-            Console.WriteLine($"> seu IMC é {imc.ToString("F2")}", CultureInfo.InvariantCulture);
+            Console.WriteLine($"> seu IMC é {imc.ToString("F2", CultureInfo.InvariantCulture)}");
             if (imc < 16)
             {
                 Console.WriteLine("> Magresa grau III");
